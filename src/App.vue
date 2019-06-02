@@ -3,7 +3,7 @@
     <h1>Employees</h1>
     <employee-form @add:employee="addEmployee"/>
     <employee-table
-      :employees="employees"
+      :employees="employees" 
       @delete:employee="deleteEmployee"
     />
   </div>
@@ -56,7 +56,7 @@ export default {
     deleteEmployee(id) {
       this.employees = this.employees.filter(
       employee => employee.id !== id
-    );
+      );
     }
   }
 }
