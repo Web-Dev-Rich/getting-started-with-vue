@@ -5,12 +5,17 @@
         <tr>
           <th>Employee name</th>
           <th>Employee email</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="employee in employees" :key="employee.id">
           <td>{{ employee.name }}</td>
           <td>{{ employee.email }}</td>
+          <td>
+            <button type="button" name="edit">Edit</button>
+            <button type="button" name="delete">Delete</button>
+          </td>
         </tr>
       </tbody>
     </table>
