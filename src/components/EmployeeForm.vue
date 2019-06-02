@@ -14,17 +14,50 @@
 export default {
     name: 'employee-form',
     data() {
-        return {
-            employee: {
-                name: '',
-                email: ''
-            }
+      return {
+        submitting: false,
+        error: false,
+        success: false,
+        employee: {
+            name: '',
+            email: ''
         }
+      }
     },
     methods: {
-        handleSubmit() {
-            this.$emit('add:employee', this.employee);
+      handleSubmit() {
+        this.submitting = true;
+        this.clearStatus();
+        
+        if (this.invalidName || this.invalidEmail) {
+          this.error = true;
+          return;
         }
+        
+        this.$emit('add:employee', this.employee);
+        this.employee = {
+          name: '',
+          email: ''
+        }
+        
+        this.error = false;
+        this.success = true;
+        this.submitting = false;
+        
+        clearStatus() {
+          this.success = false;
+          this.error = false;
+        }
+      }
+    },
+    computed: {
+      invalidName() {
+        return this.employee.name === '';
+      },
+      
+      invalidEmail() {
+        return this.employee.email === '';
+      }
     }
 }
 </script>
