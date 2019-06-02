@@ -58,6 +58,11 @@ export default {
       this.employees = this.employees.filter(
       employee => employee.id !== id
       );
+    },
+    
+    editEmployee(id, updatedEmployee) {
+      this.employees = this.employees.map(employee => employee.id === id ? updatedEmployee : employee
+      );
     }
   }
 }

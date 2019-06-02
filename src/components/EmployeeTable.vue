@@ -19,8 +19,7 @@
           <td>
             <button type="button" name="edit">Edit</button>
             <button type="button" name="delete"
-              @click="$emit('delete:employee', employee.id)"
-            >
+              @click="$emit('delete:employee', employee.id)">
               Delete
             </button>
           </td>
