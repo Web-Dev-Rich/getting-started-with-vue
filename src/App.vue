@@ -4,7 +4,8 @@
     <employee-form @add:employee="addEmployee"/>
     <employee-table
       :employees="employees" 
-      @delete:employee="deleteEmployee"
+      @delete:employee="deleteEmployee" 
+      @edit:employee="editEmployee"
     />
   </div>
 </template>
